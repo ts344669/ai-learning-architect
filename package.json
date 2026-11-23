@@ -1,9 +1,9 @@
 {
   "name": "ai-learning-architect-prototype",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "AI Learning Architect v0.9: full live AI cycle plus local teacher package import",
+  "description": "AI Learning Architect v1.0: full live AI cycle via OpenRouter plus local teacher package import",
   "scripts": {
     "start": "node server.js",
     "test": "node --test tests/*.test.js"

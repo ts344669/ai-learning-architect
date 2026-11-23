@@ -412,7 +412,7 @@ function showExample(){
 async function requestAI(e){
  e.preventDefault();
  if(!hasRequired()){feedback('Заполните четыре основных поля анкеты.');for(const k of REQUIRED){if(!$(k).value.trim()){$(k).focus();break;}}return;}
- if(!state.aiReady){feedback('Живой AI ещё не подключён: добавьте GEMINI_API_KEY в настройки Render. Пока можно посмотреть демо-результат.');return;}
+ if(!state.aiReady){feedback('Живой AI ещё не подключён: добавьте OPENROUTER_API_KEY в настройки Render. Пока можно посмотреть демо-результат.');return;}
  const customer_answers=(state.diagnosis?.questions||[]).map((q,i)=>({question:q.question,answer:state.answers[String(i)]||''})).filter(a=>a.answer);
  const body={case_id:state.currentCase?.id||'CUSTOM',questionnaire:readForm(),short_material_text:$('short_material_text').value, sources:state.sources, customer_answers};
  $('analyzeBtn').disabled=true;$('analyzeBtn').textContent='AI анализирует задачу…';feedback('Запрос отправлен. Формируем диагностическое заключение…',true);
