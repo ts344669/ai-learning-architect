@@ -1,0 +1,8 @@
+AI Learning Architect v1.0.1 — FLAT DEPLOY
+
+Эта сборка специально подготовлена для загрузки через веб-интерфейс GitHub.
+Все runtime-файлы находятся в корне: index.html, app.js, styles.css, JSON и server.js.
+Папка public больше не нужна.
+
+Загрузите ВСЕ файлы этой папки в корень существующего репозитория ai-learning-architect и сделайте Commit changes.
+Render с Auto-Deploy должен автоматически выполнить новый deploy.

@@ -6,7 +6,7 @@ import {validatePayload,normalizeDiagnosis} from './diagnosis.js';
 import {validateTreeRequest,normalizeArchitecture,validateAuditRequest,normalizeAudit,TREE_PROMPT,AUDIT_PROMPT} from './live-ai.js';
 
 const dirname=path.dirname(fileURLToPath(import.meta.url));
-const WEBROOT=path.join(dirname,'public');
+const WEBROOT=dirname;
 const PORT=Number(process.env.PORT)||3000;
 const API_KEY=process.env.OPENROUTER_API_KEY||'';
 const MODEL=/^[a-z0-9_./:-]{3,120}$/.test(process.env.OPENROUTER_MODEL||'')
@@ -105,7 +105,7 @@ const MIME={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8',
 async function route(req,res){
  headers(res);
  const pathName=new URL(req.url,'http://localhost').pathname;
- if(pathName==='/api/health')return json(res,200,{ok:true,service:'AI Learning Architect',version:'1.0'});
+ if(pathName==='/api/health')return json(res,200,{ok:true,service:'AI Learning Architect',version:'1.0.1'});
  if(pathName==='/api/status')return json(res,200,{
   ai_enabled:!!API_KEY,model:API_KEY?MODEL:null,mode:API_KEY?'live_ready':'demo_only',
   message:API_KEY?'Живой AI подключён. Демонстрационные данные доступны отдельно.':'AI API ещё не подключён: пока доступны только заранее подготовленные примеры.'
